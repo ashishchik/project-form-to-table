@@ -27,8 +27,7 @@ export class AppFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit(form:NgForm){
-    console.log('formData',this.myForm.value);
+  onSubmit(){
     this.dataService.tableData =[...this.dataService.tableData, this.myForm.value];
     this.router.navigate(['']);
    //this.formData.username = this.spaForm.value.userDetails.username;
