@@ -1,0 +1,35 @@
+<div class="form-layout py-3 px-3 rounded shadow">
+    <div class="container">
+        <form (ngSubmit)="onSubmit(spaForm)" #spaForm="ngForm">
+            <div class="mb-2">
+                <label for="name" class="form-label">Name*</label>
+                <input type="text" class="form-control" id="inputName" name="name" ngModel required>
+              </div>
+              <div class="mb-2">
+                <label for="inputMob" class="form-label">Mobile Number*</label>
+                <input type="tel" class="form-control" id="inputMob" name="inputMob" ngModel required number maxlength="10">
+              </div>
+            <div class="mb-2">
+              <label for="inputEmail" class="form-label">Email address*</label>
+              <input type="email" class="form-control" id="inputEmail" name="inputEmail" ngModel required email>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Gender*</label>
+               <div class="custom-control custom-radio" *ngFor="let gender of gender">
+                <input type="radio" class="custom-control-input" id="{{gender.id}}" name="gender" [ngModel] value="{{gender.value}}" required>
+                <label class="custom-control-label" for="{{gender.id}}">{{gender.value}}</label>
+               </div>
+            </div>
+            
+            
+            <div class="mb-4">
+                <label for="location">Select Location*</label>
+                <select class="form-control" id="location" name="location" [ngModel]="defaltLocation" required>
+                    <option  *ngFor="let city of location" [value]="city | lowercase">{{city}}</option>
+                </select>
+              </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!spaForm.valid">Submit</button>
+          </form>
+        </div>
+</div> 
