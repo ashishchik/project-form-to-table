@@ -1,4 +1,4 @@
-<div class="form-layout">
+<div class="tb-layout">
 <table class="table">
     <thead>
       <tr>
@@ -11,17 +11,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let dataRow of tableData'>
+      <tr *ngFor='let dataRow of tableData; index as i'>
         <td>{{dataRow.name}}</td>
         <td>{{dataRow.inputMob | phone}}</td>
         <td>{{dataRow.inputEmail}}</td>
         <td>{{dataRow.gender}}</td>
         <td>{{dataRow.location}}</td>
-        <td></td>
+        <td><button class="btn btn-danger" (click)="removeTable(i)">Delete</button></td>
       </tr>
      
     </tbody>
   </table>
 
-  <button (click)="navigateToForm()">Add Data</button>
+  <button (click)="navigateToForm()" class="btn btn-primary">Add Data</button>
 </div>

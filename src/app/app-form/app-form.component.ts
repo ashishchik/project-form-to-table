@@ -12,7 +12,7 @@ export class AppFormComponent implements OnInit {
 
   @ViewChild('spaForm') myForm: any;
 
-  defaltLocation = 'delhi';
+  defaltLocation = 'Delhi';
   gender = [
     {id : '1', value:"Male"},
     {id : '2', value:"Female"}

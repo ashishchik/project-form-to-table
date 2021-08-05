@@ -22,4 +22,8 @@ export class DataCollectionComponent implements OnInit {
     this.router.navigate(['/form']);
   }
 
+  removeTable(item: any){
+    this.tableData.splice(item, 1);
+  }
+
 }
